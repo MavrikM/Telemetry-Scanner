@@ -62,8 +62,8 @@ The Telemetry Scanner (TS) is a program designed to gather, display, and output 
 
 ## Testing Without a Drone
 
-This section will guide you through the process of inputting dummy data. This is useful for
-    - Verifying information is making it from your Docker container to the MQTT server
+This section will guide you through the process of inputting dummy data. This is useful for  
+    - Verifying information is making it from your Docker container to the MQTT server  
     - Running tests when we do not have an actual drone available
 
 1. Ensure your HTTP and MQTT files are running
