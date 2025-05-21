@@ -6,6 +6,14 @@ The Telemetry Scanner (TS) is a program designed to gather, display, and output 
 
 2. **cloud_api_http.py** - serves as a simple login page for drone pilots, allowing easy integration with the drone control interface
 
+## Table of Contents
+- [Installation Instructions](#installation-instructions)
+- [Testing Without a Drone](#testing-without-a-drone)
+- [Connecting To a Real Drone](#connecting-to-a-real-drone)
+- [Relevant Data Points](#relevant-data-points)
+- [Issues](#issues)
+- [Author(s) and Contact](#authors-and-contact)
+
 ## Installation Instructions
 
 1. Clone the repo
@@ -141,5 +149,6 @@ New to Git Issues? [Here](https://github.com/codeforamerica/howto/blob/master/Go
 TO DO: Include link to repo's 'Git Issues' page 
 
 ## Author(s) and Contact
-- The original author of this code and readme is Thomas Boenish (https://github.com/tboenish/)
-- Subsequent revision of the readme written by Mavrik McMeekan (https://github.com/MavrikM)
+- The Telemetry Scanner was built to be used in coordination with the [Community Development Group's Drone Integration Project](https://github.com/Interject-CommDevTeam/DroneIntegration)
+- The original author of this code and readme is [Thomas Boenish](https://github.com/tboenish/)
+- Subsequent revision of the readme written by [Nate Shaw](https://github.com/NateShaw2) and [Mavrik McMeekan](https://github.com/MavrikM)
