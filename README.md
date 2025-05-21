@@ -14,26 +14,32 @@ The Telemetry Scanner (TS) is a program designed to gather, display, and output 
 
 2. Install dependencies
     - `pip install -r requirements.txt`
-    - **NOTE:** the current requirements file assumes you already have Uvicorn installed. If you do not, you will need to install it. If you receive an error while installing dependencies, you can install them manually with `pip install FastAPI paho-mqtt >= 2 uvicorn`
+    - **NOTE:** the current requirements file assumes you already have Uvicorn installed. If you do not, you will need to install it. If you receive an error while installing dependencies, you can install them manually with `pip install FastAPI paho-mqtt uvicorn`
     - (TO DO: update requirements.txt to include Uvicorn)
 
 3. Download and install Docker Desktop and make your account
     - In your browser, navigate to [Docker](https://www.docker.com/get-started/)
     - Download the appropriate version of Docker Desktop
     - Run the Docker Desktop Installer
+    - When you reach the configuration menu, **DO NOT** check the 'Windows Containers' box, as the project will be using a linux container. Checking this box will break the project and you will need to start over.
     - When the installation is finished, you will be prompted to restart your system. Do so.
-    - Run Docker Desktop
+    - When your system comes back up, Docker should run automatically, with a terms of service page. Click 'Accept'
+    - You will then be taken to the account setup page. Ensure you select 'personal'
+    - Create your Docker account
+    - **NOTE:** You must verify your email address using the email Docker sends or it will not run properly. 
 
 4. Spin up the EMQX server
-    - `docker run -d --name emqx -p 1883:1883 -p 8083:8083 -p 8084:8084 -p 8883:8883 -p 18083:18083  emqx:5.0.20`
-    - Verify the container by running `docker ps` in your terminal
+    - Open a terminal and run the command `docker run -d --name emqx -p 1883:1883 -p 8083:8083 -p 8084:8084 -p 8883:8883 -p 18083:18083  emqx:5.0.20`
+    - Verify the container by running `docker ps` in your terminal. You should get an output with headings like 'CONTAINER ID', 'IMAGE', and so on. You should also now see your EMQX server in the Docker Desktop app.
     - Open [localhost](http://localhost:18083/)
     - You will arrive on a login page.
         - Username: admin
         - Password: public
+    - You will then be prompted to update your password
+    - You should now arrive at the EMQX Dashboard
     
 5. Connect DJI Smart Controller to the same local network as your PC
-    - **NOTE:** This step is only necessary when *actually* running the program with a drone. If this is your initial setup, proceed to step 6.
+    - **NOTE:** This step is only necessary when *actually* running the program with a drone. If this is your initial setup, or you are running simulations, proceed to step 6.
 
 6. Update files
     - Update the "host_addr" variable in both cloud_api files to your own IP address
@@ -52,10 +58,6 @@ The Telemetry Scanner (TS) is a program designed to gather, display, and output 
     - Open a second terminal, input `python ./cloud_api_mqtt.py`
     - The terminal should populate and say "Connected with result code Success"
     - Reopen [localhost](http://localhost:18083/)
-    - You should now see an emqx dashboard login page
-    - Login
-        - Username: admin
-        - Password: public
     - You should now be able to receive data from the drone
 
 ## Testing Without a Drone
@@ -65,16 +67,29 @@ This section will guide you through the process of inputting dummy data. This is
     - Running tests when we do not have an actual drone available
 
 1. Ensure your HTTP and MQTT files are running
-2. Navigate to the MQTT dashboard (opened in Step 8 Part c)
-3. In the left sidebar, expand the 'diagnose' toggle menu and click the 'WebSocket Client' button
+2. Navigate to the EMQX dashboard (opened in Step 8 Part c)
+3. In the left sidebar, expand the 'diagnose' toggle menu (it looks like a magnifying glass) and click the 'WebSocket Client' button
 4. In the 'Connection' section, click the 'Connect' button
 5. In the 'Subscription' section, in the 'Topic' field, input "thing/#"
 6. Click the 'Subscribe' button
 7. In the 'Publish' section
-    - Update the 'Topic' field to read "thing/1"
-    - Update the 'Payload' field to read "{"msg": "hello world"}" (that is, the first character in the field should be { and the final character should be })
+    - Update the 'Topic' field to read "thing/product/testdrone/osd"
+    - Update the 'Payload' field  
+    (copy everything inside the block below):
+    ```json
+    {
+    "data": {
+        "latitude": 47.6062,
+        "longitude": -122.3321,
+        "attitude_head": 90,
+        "attitude_pitch": 1.5,
+        "attitude_roll": -2.3,
+        "height": 15.0
+    }
+    }
+    ```
     - Click 'Publish'
-8. Return to the terminal associated with your MQTT file. You should have received 'hello world'
+8. Return to the terminal associated with your MQTT file. You should have received the telemetry data
 
 ## Connecting To a Real Drone
 
@@ -92,7 +107,7 @@ TO DO: Document all data points needed/possibly helpful for the project
 
 ## Issues
 Errors and bugs should be added in the repositories 'Git Issues' page.  
-Not sure how to write a Git issue? [Here](https://github.com/codeforamerica/howto/blob/master/Good-GitHub-Issues.md)'s a great resource!  
+New to Git Issues? [Here](https://github.com/codeforamerica/howto/blob/master/Good-GitHub-Issues.md)'s a great resource!  
 TO DO: Include link to repo's 'Git Issues' page 
 
 ## Author(s) and Contact
