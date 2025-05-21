@@ -112,4 +112,4 @@ TO DO: Include link to repo's 'Git Issues' page
 
 ## Author(s) and Contact
 - The original author of this code and readme is Thomas Boenish (https://github.com/tboenish/)
-- Subsequent revision(s) of the readme written by Mavrik McMeekan (https://github.com/MavrikM)
+- Subsequent revision of the readme written by Mavrik McMeekan (https://github.com/MavrikM)
