@@ -138,6 +138,7 @@ This section will guide you through the process of inputting dummy data. This is
 | home_distance | Distance from the Home point | float |
 | home_latitude | Home point latitude | float |
 | home_longitude | Home point longitude | float |
+| attitude_head | Yaw axis angle | int |
 | elevation | Relative takeoff point altitude | float |
 | height | Absolute height | float |
 | latitude | Current latitude | float: {"max":"3.4028235E38","min":"-1.4E-45","step":"0.1"} |
