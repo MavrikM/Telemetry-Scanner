@@ -115,17 +115,17 @@ To test without a drone:
 
 ## Relevant Data Points
 
-**Note:** The data points listed in **bold** are considered our primary (most important) points
+**Note:** The data points that are `emphasized` are considered our primary (most important) points
 
 | Data Point Name | Description | Type |
 | --- | --- | --- |
-| **latitude** | Current latitude | float: {"max":"3.4028235E38","min":"-1.4E-45","step":"0.1"} |
-| **longitude** | Current longitude | float: {"max":"3.4028235E38","min":"-1.4E-45","step":"0.1"} |
-| **height** | Absolute height | float |
-| **attitude_head** | Yaw axis angle | int |
-| **gimbal_pitch** | Gimbal pitch axis angle | double: {"max":"180","min":"-180","step":0.1,"unit_name":"Degrees / °"} |
-| **gimbal_roll** | Gimbal roll axis angle | double: {"max":"180","min":"-180","step":0.1,"unit_name":"Degrees / °"} |
-| **gimbal_yaw** | Gimbal yaw axis angle | double: {"max":"180","min":"-180","step":0.1,"unit_name":"Degrees / °"} |
+| `latitude` | Current latitude | float: {"max":"3.4028235E38","min":"-1.4E-45","step":"0.1"} |
+| `longitude` | Current longitude | float: {"max":"3.4028235E38","min":"-1.4E-45","step":"0.1"} |
+| `height` | Absolute height | float |
+| `attitude_head` | Yaw axis angle | int |
+| `gimbal_pitch` | Gimbal pitch axis angle | double: {"max":"180","min":"-180","step":0.1,"unit_name":"Degrees / °"} |
+| `gimbal_roll` | Gimbal roll axis angle | double: {"max":"180","min":"-180","step":0.1,"unit_name":"Degrees / °"} |
+| `gimbal_yaw` | Gimbal yaw axis angle | double: {"max":"180","min":"-180","step":0.1,"unit_name":"Degrees / °"} |
 | mode_code | Aircraft state | enum_int: {"0":"Standby","1":"Takeoff preparation","2":"Takeoff preparation completed","3":"Manual flight","4":"Automatic takeoff","5":"Wayline flight","6":"Panoramic photography","7":"Intelligent tracking","8":"ADS-B avoidance","9":"Auto returning to home","10":"Automatic landing","11":"Forced landing","12":"Three-blade landing","13":"Upgrading","14":"Not connected","15":"APAS","16":"Virtual stick state","17":"Live flight Controls","18":"Airborne RTK fixing mode"} |
 | mode_code_reason | The reason the aircraft entered the current state | enum_int: {"0":"No meaning","1":"Insufficient battery power (return, landing)","2":"Insufficient battery voltage (return, landing)","3":"Severely low voltage (return, landing)","4":"Requested by remote controller buttons (takeoff, return, landing)","5":"Requested by App (takeoff, return, landing)","6":"Loss of remote controller signal (return, landing, hover)","7":"Triggered by external devices such as navigation, SDK, etc. (takeoff, return, landing)","8":"Entered the dock GEO Zone (landing)","9":"Although a return was triggered, it was too close to the Home point (landing)","10":"Although a return was triggered, it was too far from the Home point (landing)","11":"Requested when executing waypoint missions (takeoff)","12":"Requested after reaching above the Home point in the return phase (landing)","13":"Continued descent after the aircraft's height dropped to 0.7m from the ground (second-stage descent limit) leading to (landing)","14":"Forced breakthrough of low altitude protection by devices like App, SDK (landing)","15":"Requested due to passing flights in the vicinity (returning, landing)","16":"Requested due to height control failure (return, landing)","17":"Entered after intelligent low battery return (landing)","18":"AP controls the flight mode (manual flight)","19":"Hardware abnormally (return, landing)","20":"End of anti-collision protection (landing)","21":"Return canceled (hover)","22":"Encountered obstacles during the return (landing)"} |
 | cameras | Aircraft camera information | JSON object that contains remain_photo_num, reamin_record_duration, record_time, camera_mode, photo_state, and recording_state |
