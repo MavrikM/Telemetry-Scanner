@@ -122,7 +122,10 @@ To test without a drone:
 | `latitude` | Current latitude | float: {"max":"3.4028235E38","min":"-1.4E-45","step":"0.1"} |
 | `longitude` | Current longitude | float: {"max":"3.4028235E38","min":"-1.4E-45","step":"0.1"} |
 | `height` | Absolute height | float |
+| `elevation` | Relative takeoff point altitude | float |
 | `attitude_head` | Yaw axis angle | int |
+| `attitude_roll` | Roll axis angle | float |
+| `attitude_pitch` | Pitch axis angle | float |
 | `gimbal_pitch` | Gimbal pitch axis angle | double: {"max":"180","min":"-180","step":0.1,"unit_name":"Degrees / °"} |
 | `gimbal_roll` | Gimbal roll axis angle | double: {"max":"180","min":"-180","step":0.1,"unit_name":"Degrees / °"} |
 | `gimbal_yaw` | Gimbal yaw axis angle | double: {"max":"180","min":"-180","step":0.1,"unit_name":"Degrees / °"} |
@@ -150,7 +153,6 @@ To test without a drone:
 | home_distance | Distance from the Home point | float |
 | home_latitude | Home point latitude | float |
 | home_longitude | Home point longitude | float |
-| elevation | Relative takeoff point altitude | float |
 
 ## Issues
 Errors and bugs should be added in the repositories 'Git Issues' page  
